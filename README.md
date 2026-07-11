@@ -1,25 +1,30 @@
-# 🚀 Plataforma de Gestión de Colaboradores y Perfiles Laborales
+# Plataforma de Gestión de Colaboradores y Perfiles Laborales
 ## Desarrollo de Software VII | Proyecto Parcial 2
-### Desarrollador: Samuel Ojo
+### Desarrollador: Samuel
 
+**Entorno:** PHP 8.3 · MySQL 8.4 · Estado: Finalizado
 
-## 📌 Índice General
-
-- [Contexto del Proyecto](#-contexto-del-proyecto)
-- [Funcionalidades Principales](#-funcionalidades-principales)
-- [Stack Tecnológico](#️-stack-tecnológico)
-- [Distribución del Código Fuente](#️-distribución-del-código-fuente)
-- [Modelo de Datos](#-modelo-de-datos)
-- [Pre-requisitos](#-pre-requisitos)
-- [Instalación del Entorno](#-instalación-del-entorno)
-- [Rutas Disponibles](#-rutas-disponibles)
-- [Validaciones Clave](#-validaciones-clave)
-- [Notas de Seguridad](#-notas-de-seguridad)
-- [Créditos](#-créditos)
+> Solución web para administrar colaboradores y sus perfiles laborales, con registro de datos personales, ruta de trabajo, planilla y reportes exportables a Excel. Arquitectura MVC desarrollada íntegramente en español, incluyendo nombres de clases, métodos y variables.
 
 ---
 
-## 📝 Contexto del Proyecto
+## Índice General
+
+- [Contexto del Proyecto](#contexto-del-proyecto)
+- [Funcionalidades Principales](#funcionalidades-principales)
+- [Stack Tecnológico](#stack-tecnológico)
+- [Distribución del Código Fuente](#distribución-del-código-fuente)
+- [Modelo de Datos](#modelo-de-datos)
+- [Pre-requisitos](#pre-requisitos)
+- [Instalación del Entorno](#instalación-del-entorno)
+- [Rutas Disponibles](#rutas-disponibles)
+- [Validaciones Clave](#validaciones-clave)
+- [Notas de Seguridad](#notas-de-seguridad)
+- [Créditos](#créditos)
+
+---
+
+## Contexto del Proyecto
 
 La aplicación web gestiona colaboradores y sus perfiles laborales. El sistema administra datos personales, información de ruta, tipo de sangre, tipo de empleado, planilla, ocupación, salario y estado activo del perfil.
 
@@ -28,7 +33,7 @@ Construir un sistema con arquitectura MVC que permita validar y sanitizar entrad
 
 ---
 
-## ✨ Funcionalidades Principales
+## Funcionalidades Principales
 
 - Registro de colaboradores con datos personales y perfil laboral.
 - Catálogos dinámicos para rutas, ocupaciones, tipos de empleado y tipos de planilla.
@@ -40,7 +45,7 @@ Construir un sistema con arquitectura MVC que permita validar y sanitizar entrad
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Componente | Especificación | Propósito Operativo |
 | :--- | :--- | :--- |
@@ -57,36 +62,36 @@ Construir un sistema con arquitectura MVC que permita validar y sanitizar entrad
 
 ---
 
-## 🗂️ Distribución del Código Fuente
+## Distribución del Código Fuente
 
 ```text
 ParcialDSF7/
-├── 📁 app/                          # Núcleo de la Aplicación (Backend)
-│   ├── 📁 config/
-│   │   └── 📄 BaseDatos.php         # Abstracción de Conexión PDO (Singleton)
-│   ├── 📁 controllers/
-│   │   └── 📄 ControladorColaborador.php
-│   ├── 📁 models/
-│   │   ├── 📄 Colaborador.php       # Registro y consulta de colaboradores/perfiles
-│   │   ├── 📄 GrupoSanguineo.php    # Catálogo de tipos de sangre
-│   │   └── 📄 Nacion.php            # Catálogo de países
-│   ├── 📁 utils/
-│   │   ├── 📄 Limpiador.php         # Sanitización de entradas
-│   │   └── 📄 Validador.php         # Reglas de validación
-│   └── 📁 views/
-│       ├── 📄 formulario.php        # Alta / edición de colaboradores
-│       └── 📄 reporte.php           # Listado y exportación
-├── 📁 public/                       # Punto de Entrada Público
-│   ├── 📄 index.php                 # Enrutador Central (Front Controller)
-│   └── 📄 estilos.css
-├── 📄 .htaccess                     # Configuración de URLs Amigables (Apache)
-├── 📄 index.php                     # Redirección Inicial de Peticiones
-└── 📄 itech_DBP.sql                 # Esquema Estructural de la Base de Datos
+├── app/                          # Núcleo de la Aplicación (Backend)
+│   ├── config/
+│   │   └── BaseDatos.php         # Abstracción de Conexión PDO (Singleton)
+│   ├── controllers/
+│   │   └── ControladorColaborador.php
+│   ├── models/
+│   │   ├── Colaborador.php       # Registro y consulta de colaboradores/perfiles
+│   │   ├── GrupoSanguineo.php    # Catálogo de tipos de sangre
+│   │   └── Nacion.php            # Catálogo de países
+│   ├── utils/
+│   │   ├── Limpiador.php         # Sanitización de entradas
+│   │   └── Validador.php         # Reglas de validación
+│   └── views/
+│       ├── formulario.php        # Alta / edición de colaboradores
+│       └── reporte.php           # Listado y exportación
+├── public/                       # Punto de Entrada Público
+│   ├── index.php                 # Enrutador Central (Front Controller)
+│   └── estilos.css
+├── .htaccess                     # Configuración de URLs Amigables (Apache)
+├── index.php                     # Redirección Inicial de Peticiones
+└── itech_DBP.sql                 # Esquema Estructural de la Base de Datos
 ```
 
 ---
 
-## 🗄️ Modelo de Datos
+## Modelo de Datos
 
 Base de datos: **`itech_DBP`**
 
@@ -105,7 +110,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## ✅ Pre-requisitos
+## Pre-requisitos
 
 - PHP 8.3 o superior con extensión **OpenSSL** habilitada.
 - MySQL 8.4 o superior.
@@ -114,7 +119,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## ⚙️ Instalación del Entorno
+## Instalación del Entorno
 
 1. Cloná o copiá el proyecto dentro de la carpeta pública de tu servidor local (ej. `C:\wamp64\www\ParcialDSF7`).
 2. Importá el esquema de base de datos ejecutando el archivo `itech_DBP.sql` en tu gestor MySQL.
@@ -131,7 +136,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## 🌐 Rutas Disponibles
+## Rutas Disponibles
 
 | Ruta | Método | Acción |
 | :--- | :--- | :--- |
@@ -144,7 +149,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## 🔒 Validaciones Clave
+## Validaciones Clave
 
 - **Identidad:** formato obligatorio `00-0000-0000` (2 dígitos, guion, 4 dígitos, guion, 4 dígitos).
 - **Correo electrónico:** validado con filtros nativos de PHP (`FILTER_VALIDATE_EMAIL`).
@@ -155,7 +160,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## 🛡️ Notas de Seguridad
+## Notas de Seguridad
 
 - Todas las consultas a la base de datos utilizan **sentencias preparadas (PDO)** para prevenir inyección SQL.
 - Las entradas de texto se sanitizan (`Limpiador`) antes de validarse (`Validador`), separando ambas responsabilidades.
@@ -164,7 +169,7 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-## 👤 Créditos
+## Créditos
 
 **Desarrollado por:** Samuel
 **Curso:** Desarrollo de Software VII — Universidad Tecnológica de Panamá
@@ -172,6 +177,4 @@ La relación `colaboradores` → `perfiles_laborales` es de **1 a N**, donde el 
 
 ---
 
-<p align="center">
-  <i class="fas fa-copyright"></i> 2026 iTECH Contrataciones. Todos los derechos reservados.
-</p>
+2026 iTECH Contrataciones. Todos los derechos reservados.
